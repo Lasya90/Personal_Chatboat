@@ -64,8 +64,8 @@ def load_data():
 df, faiss_index = load_data()
 
 # App Header
-st.markdown('<h1 class="chat-font">🤖 Nirmal Gaud Clone Chatbot</h1>', unsafe_allow_html=True)
-st.markdown('<h3 class="chat-font">Ask me anything, and I\'ll respond as Nirmal Gaud!</h3>', unsafe_allow_html=True)
+st.markdown('<h1 class="chat-font">🤖 Lasya Pothineedi Clone Chatbot</h1>', unsafe_allow_html=True)
+st.markdown('<h3 class="chat-font">Ask me anything, and I\'ll respond as Lasya Pothineedi!</h3>', unsafe_allow_html=True)
 st.markdown("---")
 
 # Function to find the closest matching question using FAISS
@@ -78,7 +78,7 @@ def find_closest_question(query, faiss_index, df):
 
 # Function to generate a refined answer using Gemini
 def generate_refined_answer(query, retrieved_answer):
-    prompt = f"""You are Nirmal Gaud, an AI, ML, and DL instructor. Respond to the following question in a friendly and conversational tone:
+    prompt = f"""You are Lasya Pothineedi, an Student. Respond to the following question in a friendly and conversational tone:
     Question: {query}
     Retrieved Answer: {retrieved_answer}
     - Provide a detailed and accurate response.
@@ -106,9 +106,9 @@ if prompt := st.chat_input("Ask me anything..."):
             if retrieved_answer:
                 # Generate a refined answer using Gemini
                 refined_answer = generate_refined_answer(prompt, retrieved_answer)
-                response = f"**Nirmal Gaud**:\n{refined_answer}"
+                response = f"**Lasya Pothineedi**:\n{refined_answer}"
             else:
-                response = "**Nirmal Gaud**:\nI'm sorry, I cannot answer that question."
+                response = "**Lasya Pothineedi**:\nI'm sorry, I cannot answer that question."
         except Exception as e:
             response = f"An error occurred: {e}"
     
